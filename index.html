@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Application name -->
+    <title>Web-chat</title>
+    <!-- Web-chat logo -->
+    <link rel="shortcut icon" href="data/images/icon.png" type="image/x-icon">
+    <!-- Web-chat CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- server connection -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"
+        integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA=="
+        crossorigin="anonymous"></script>
+    <!-- client script -->
+    <script defer src="js/client.js"></script>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <img class="logo" src="data/images/icon.png" alt="Error to load image">
+        <h1>Welcome to Web-chat</h1>
+    </nav>
+    <div class="container" id="container">
+        <!-- Message box -->
+    </div>
+    <!-- Sending form -->
+    <form id="sender">
+        <input type="text" name="messageInput" id="messageInput" placeholder="Type a message">
+        <button type="submit" id="button"></button>
+    </form>
+    <!-- owner copyright -->
+    <footer>
+        <p>© Copyright 2021-2022 | Harsh Dobariya</p>
+    </footer>
+</body>
+
+</html>

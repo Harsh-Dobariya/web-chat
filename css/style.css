@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* variables */
+:root {
+  --white: rgb(255, 255, 255);
+  --black: rgb(13, 20, 24);
+  --lightblue: rgb(27, 214, 223);
+  --pink: rgb(247, 26, 255);
+  --message-box: rgb(5, 97, 98);
+  --send-bg: rgb(30, 36, 40);
+  --box-width: 850px;
+  --box-bg: linear-gradient(var(--black), var(--black)),
+    linear-gradient(var(--lightblue), var(--pink));
+  --bg-attr: padding-box, border-box;
+}
+
+/* container animation define */
+@keyframes container {
+  0% {
+    background: linear-gradient(var(--black), var(--black)),
+      linear-gradient(var(--lightblue), var(--pink));
+  }
+  25% {
+    background: linear-gradient(var(--black), var(--black)),
+      linear-gradient(to left, var(--lightblue), var(--pink));
+  }
+  50% {
+    background: linear-gradient(var(--black), var(--black)),
+      linear-gradient(to top, var(--lightblue), var(--pink));
+  }
+  75% {
+    background: linear-gradient(var(--black), var(--black)),
+      linear-gradient(to right, var(--lightblue), var(--pink));
+  }
+  100% {
+    background: linear-gradient(var(--black), var(--black)),
+      linear-gradient(var(--lightblue), var(--pink));
+  }
+}
+
+/* logo animation define */
+@keyframes logo {
+  0% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 65px;
+    height: 65px;
+    transform: rotate(360deg);
+  }
+}
+
+/* web-chat body */
+body {
+  background-color: var(--black);
+  height: 100vh;
+}
+
+/* logo image */
+.logo {
+  display: block;
+  width: 65px;
+  height: 65px;
+  margin: auto;
+  animation: logo 2s;
+}
+
+/* heading */
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--white);
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+/* container style */
+.container {
+  background: var(--box-bg);
+  background-clip: var(--bg-attr) !important;
+  background-origin: var(--bg-attr) !important;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  max-width: var(--box-width);
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 6px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  animation: container 2s linear infinite;
+}
+
+/* scrollbar style */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* message box style */
+.message {
+  background-color: var(--message-box);
+  border-radius: 8px;
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  width: auto;
+  padding: 10px;
+  margin: 12px 0;
+  position: relative;
+}
+
+/* left side message*/
+.left {
+  float: left;
+  clear: both;
+}
+
+/* center side message */
+.center {
+  font-size: 12px;
+  border-radius: 6px;
+  width: fit-content;
+  padding: 6px;
+  clear: both;
+  margin: 8px auto;
+}
+
+/* right side message */
+.right {
+  float: right;
+  clear: both;
+}
+
+/* right arrow */
+[class$="right"]:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 15px solid var(--message-box);
+  border-right: 13px solid transparent;
+  border-left: 13px solid transparent;
+  top: 0px;
+  right: -10px;
+  position: absolute;
+}
+
+/* left arrow */
+[class$="left"]:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 15px solid var(--message-box);
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  top: 0px;
+  left: -10px;
+  position: absolute;
+}
+
+/* form block */
+#sender {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  max-width: var(--box-width);
+  margin: auto;
+  box-sizing: border-box;
+}
+
+#messageInput {
+  background-color: rgb(51, 56, 59);
+  color: rgb(133, 135, 137);
+  border: 2px solid var(--send-bg);
+  border-radius: 50px;
+  width: 100%;
+  height: 45px;
+  font-size: 18px;
+  padding: 1px 10px;
+  margin: 1px auto;
+}
+
+#messageInput:focus {
+  color: var(--white);
+  outline: none;
+}
+
+#button {
+  background: url(../data/images/send-button.png) no-repeat; /* send button image */
+  background-size: cover;
+  border: none;
+  width: 36px;
+  height: 34px;
+  margin: auto 10px;
+  cursor: pointer;
+  display: none;
+}
+
+p {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white);
+  margin: 10px auto;
+}
